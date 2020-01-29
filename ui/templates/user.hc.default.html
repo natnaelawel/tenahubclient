@@ -1,0 +1,112 @@
+{{ define "user.hc.default.layout" }}
+{{ template "user.header.default.layout" }}
+{{ template "user.hc.default.content" . }}
+{{ template "user.footer.default.layout" }}
+{{ end }}
+
+{{ define "user.hc.default.content" }}
+<div class="container-fluid">
+    <div class="container">
+        <div class='health_center_image row border-bottom mt-3 mb-3 pb-1'>
+                <div class='col-md-12'>
+                    <img src="../assets/img/health_center_hd.jpg" alt='' id='health-center-img-banner'>
+                </div>
+            </div>
+            <div class='helth-center-desc'>
+            {{ with .Healthcenter }}
+            <h2 class='health-center-desc-title'>{{ .Name}}</h2>
+            <div class='rating d-flex pb-3'>
+                <p><b>Rating</b></p>
+                <i class="fas fa-star checked" style="font-size: 20px;cursor: pointer;"></i>
+            {{ end }}
+                <span>{{ .Rating }}</span>
+            {{ with .Healthcenter}}
+            </div>
+            <div class='pb-3'>
+                <b class='mr-3'>Address</b>
+                <span>{{ .City }}</span>
+            </div>
+            <div class='pb-3'>
+                <b class='mr-3'>Phone number</b>
+                <span>{{ .PhoneNumber }}</span>
+            </div>
+            {{ end }}
+            <div class='desc-services'>
+                <p><b>Services</b></p>
+                <ul class="list-group list-group-flush">
+                    {{ range .Services }}
+                        <li class="list-group-item">{{ .Name }}</li>
+                    {{ end }}
+                </ul>
+            </div>
+            <div class="reviews mb-5">
+                <h2 class="border-bottom">Reviews</h2>
+                <div class="add-review pt-3 pb-3">
+                    <p class="">Login <a href="#" onclick="showmodal()" class="text-primary">here</a> to share your feedback</p>
+                    <script>
+                        function showmodal(){
+                            console.log("correct");
+                            var modal = document.getElementById("modal");
+                            modal.style.display = "block";
+                        }
+
+                        function closemodal() {
+                            console.log("correct");
+                            var modal = document.getElementById("modal");
+                            modal.style.display = "none";
+                        }
+
+                    </script>
+                </div>
+                {{ range .Comments }}
+                <div class='review border-bottom col-md-6 mb-2 border p-2 rounded'>
+                    <div class='reviewer row pt-2'>
+                        <div class='ml-3'>
+                            <span id='user-logo' class='bg-danger text-white pl-1 pr-1 mt-2 rounded-circle'>J</span> 
+                        </div>
+                        <div class='col-md-9 commenter'>
+                            {{ if .FirstName }}
+                            <p class='p-0 m-0 reviewer-name text-success'>{{.FirstName}}</p>
+                            {{ else }}
+                            <p class='p-0 m-0 reviewer-name text-success'>Anonymous</p>
+                            {{ end }}
+                            <span class="review-time">{{ .PlacedAt }}</span>
+                        </div>
+                    </div>
+                    <div class='review-text pt-2'>
+                        <p>{{ .Comment.Comment }}</p>
+                    </div>
+                </div>
+                {{ end }}
+            </div>
+        </div>
+    </div>
+</div>
+<div class="modal" tabindex="-1" role="dialog" id="modal">
+    <div class="modal-dialog" role="document">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h5 class="modal-title">Login</h5>
+          <button type="button" class="close" data-dismiss="modal" aria-label="Close" onclick="closemodal()">
+            <span aria-hidden="true">&times;</span>
+          </button>
+        </div>
+        <div class="modal-body">
+            <form action="/login" method="POST">
+                <input hidden="true" type="text" value='{{ .FormValue.CSRF }}' name="_csrf"/>
+                <div class="form-group">
+                    <label for="">Email</label>
+                    <input type="text" class="form-control" name="email">
+                </div>
+                <div class="form-group">
+                    <label for="">Password</label>
+                    <input type="password" class="form-control" name="password">
+                </div>
+                <button type="submit" class="btn btn-primary">Login</button>
+                <button type="button" class="btn btn-secondary" onclick="closemodal()">Close</button>
+            </form>
+        </div>
+      </div>
+    </div>
+  </div>
+{{ end }}

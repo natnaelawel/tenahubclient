@@ -1,0 +1,99 @@
+{{ define "user.index.default.layout" }}
+{{ template "user.header.default.layout" }}
+{{ template "user.index.default.content" .}}
+{{ template "user.footer.default.layout" }}
+{{ end }}
+
+{{ define "user.index.default.content" }}
+<div id="banner" class="container-fluid d-flex body-container">
+    <div class="container align-self-center">
+        <h1 class="banner-title text-white">Welcome to TenaHub</h1>
+        <div class="col-md-6 pl-0">
+            <div>
+                <form action="/search" class="search-form" method="get" enctype="text/plain">
+                    <div>
+                        <input type="text" pattern="^[^\s]+(\s+[^\s]+)*$" placeholder="search for healthcenters" name="search-key" class="form-control search-input" required>
+                    </div>
+                    <div class="form-row">
+                        <input type="submit" class="btn col btn-danger search-input" value="search">
+                        <input type="button" onclick="listall()" class="btn col search-input" id="list-all-btn" value="list all">
+                        <script>
+                        function listall(){
+                            window.location.href = "http://localhost:8282/search?search-key=&column=name"
+                        }
+                        </script>
+                    </div>
+                </form> 
+            </div>
+        </div>
+    </div>
+</div>
+<div class="container" id="hot-to-use">
+    <h2 class="text-center">how to use</h2>
+    <div class="row" id="walkthrough-container">
+        <div class="col-md-4">
+            <div class="text-center shadow walkthrough-item">
+                <div class="rounded-circle bg-primary walkthrough-icon p-3" >
+                    <img src="../assets/img/search.png" alt="">
+                </div>
+                <p class="p-2"><strong>Search healthcenters</strong></p>
+                <p>Search healthcenters around you and see what other peoples have to say about them.</p>
+            </div>
+        </div>
+        <div class="col-md-4">
+            <div class="text-center shadow walkthrough-item">
+                <div class="rounded-circle bg-success walkthrough-icon p-3" >
+                    <img src="../assets/img/signup.png" alt="">
+                </div>
+                <p class="p-2"><strong>Sreate account</strong></p>
+                <p>Create your account and share your feedback with others.</p>
+            </div>
+        </div>
+        <div class="col-md-4">
+            <div class="text-center shadow walkthrough-item">
+                <div class="rounded-circle bg-danger walkthrough-icon p-3" >
+                    <img src="../assets/img/comments.png" alt="">
+                </div>
+                <p class="p-2"><strong>Give feedback</strong></p>
+                <p>Your feedbacks will impact the quality of services healthcenters are providing.</p>
+            </div>
+        </div>
+    </div>
+</div>
+<div class="container-fluid" id="top-rated">
+    <div class="container">
+        <h2 class="text-center">Top rated</h2>
+        <div class="row">
+            {{ range . }}
+            <div class='col-md-3 mb-3'>
+                <div class='items border rounded'>
+                    <div class='item-img'>
+                        <img src='../assets/img/health_center.jpg' alt='img' class='rounded-top'>
+                    </div>
+                    <div class='item-desc pt-2'>
+                        <b class='p-0'><a href="/healthcenters?id={{.ID}}">{{ .Name }}</a></b>
+                        <p class='p-0 mb-1'>{{ .City }}</p>
+                        <div class='rating d-flex p-0'>
+                            <i class="fas fa-star" style="font-size: 18px;color: orange;"></i>
+                            <span>{{ .Rating }}</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            {{ end }}
+        </div>
+    </div>
+</div>    
+<div class="container-fluid adv-h m-0 p-0">
+    <div class="advert container">
+        <div class="row">
+            <div class="col-md-9">
+                <h1 class="text-white">Join the community</h1>
+            </div>
+            <div class="col-md-3">
+                <a class="btn btn-warning text-white advert-btn mt-2" style="float: right;">signup now</a>
+            </div>
+        </div>
+    </div>
+</div>  
+{{ end }}

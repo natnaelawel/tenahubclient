@@ -1,0 +1,20 @@
+{{ define "healthcenter_home.layout"}}
+    {{template "healthcenter_home_header.layout" .}}
+    {{template "healthcenter_home.content" .}}
+    {{template "admin_home.footer" .}}
+
+{{end}}
+
+{{define "healthcenter_home.content"}}
+
+<div class="main">
+    <ul >
+
+        <li>{{template "healthcenter_dashboard.layout" .}}</li>
+        <li>{{template "healthcenter_edit_profile.layout" .}}</li>
+        <li>{{template "healthcenter_service.layout" .}}</li>
+        <li>{{template "healthcenter_feedback.layout" .}}</li>
+    </ul>
+</div>
+
+{{end}}

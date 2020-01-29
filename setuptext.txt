@@ -1,0 +1,60 @@
+FROM golang:latest 
+# Add Maintainer Info
+LABEL maintainer="Natnael Awel <natnael.awel@gmail.com>"
+
+ADD . /go/src/github.com/tenahubclientdocker
+WORKDIR /go/src/github.com/tenahubclientdocker
+#COPY . .
+
+RUN go get ./... 
+#RUN go get -d -v ./...
+RUN go install -v ./...
+
+#CMD ["tenahubclientdocker"]
+#EXPOSE 8181
+
+
+
+
+
+#RUN mkdir /app 
+#ADD . /app/ 
+#WORKDIR /app
+#RUN go get ./... 
+#RUN go build -o main . 
+#CMD ["/app/main"]
+
+
+
+
+
+
+
+
+
+
+
+FROM golang:latest 
+# Add Maintainer Info
+LABEL maintainer="Natnael Awel <natnael.awel@gmail.com>"
+
+WORKDIR /go/src/github.com/tenahubapidocker
+COPY . .
+
+RUN go get ./... 
+#RUN go get -d -v ./...
+RUN go install -v ./...
+
+CMD ["tenahubapidocker"]
+#EXPOSE 8181
+
+
+
+
+
+#RUN mkdir /app 
+#ADD . /app/ 
+#WORKDIR /app
+#RUN go get ./... 
+#RUN go build -o main . 
+#CMD ["/app/main"]

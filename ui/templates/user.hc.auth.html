@@ -1,0 +1,151 @@
+{{ define "user.hc.auth.layout" }}
+{{ template "user.header.layout" }}
+{{ template "user.hc.auth.content" . }}
+{{ template "user.footer.default.layout" }}
+{{ end }}
+{{ define "user.hc.auth.content" }}
+<div class="container-fluid">
+    <div class="container">
+            <div class='health_center_image row border-bottom mt-3 mb-3 pb-1'>
+                <div class='col-md-12'>
+                    <img src="../assets/img/health_center_hd.jpg" alt='' id='health-center-img-banner'>
+                </div>
+            </div>
+            <div class='helth-center-desc'>
+                {{ with .Healthcenter }}
+                <h2 class='health-center-desc-title'>{{ .Name}}</h2>
+                <div class='rating d-flex pb-3'>
+                    <p><b>Rating</b></p>
+                    <i class="fas fa-star checked" style="font-size: 20px;cursor: pointer;"></i>
+                {{ end }}
+                    <span>{{ .Rating }}</span>
+                {{ with .Healthcenter}}
+                </div>
+                <div class='pb-3'>
+                    <b class='mr-3'>Address</b>
+                    <span>{{ .City }}</span>
+                </div>
+                <div class='pb-3'>
+                    <b class='mr-3'>Phone number</b>
+                    <span>{{ .PhoneNumber }}</span>
+                </div>
+                {{ end }}
+                <div class='desc-services'>
+                    <p><b>Services</b></p>
+                    <ul class="list-group list-group-flush">
+                        {{ range .Services }}
+                            <li class="list-group-item">{{ .Name }}</li>
+                        {{ end }}
+                    </ul>
+                </div>
+            <div class="reviews mb-5" id="reviews">
+                <h2 class="border-bottom">Reviews</h2>
+                <div class="add-review pt-3 pb-3">
+                    <div class='row'>
+                        <div class='col-md-3'>
+                        </div>
+                        <div class='col-md-3'>
+                            <p id='rating-notification'></p>
+                        </div>
+                    </div>
+                    {{ if .Isvalid }}
+                    <form id="comment-form" method="post">
+                        <div class="col-md-9 pl-0">
+                            <input hidden="true" type="text" name="_csrf" id="csrf" value='{{ .FormValue.CSRF }}' />
+                            <div class="form-group">
+                                <!-- <select class='custom-select mb-2 ml-0' id="rating" name="rating" requried>
+                                    <option value=""  disabled selected>Rating</option>
+                                    <option value="1">1</option>
+                                    <option value="2">2</option>
+                                    <option value="3">3</option>
+                                    <option value="4">4</option>
+                                    <option value="5">5</option>
+                                </select> -->
+                                <p><strong>your rating</strong></p>
+                                <i class="fas fa-star checked" onmouseover="starmark(this)" onclick="starmark(this)" id="1one" style="font-size: 30px;cursor: pointer;"></i>
+                                <i class="fas fa-star checked" onmouseover="starmark(this)" onclick="starmark(this)" id="2one" style="font-size: 30px;cursor: pointer;"></i>
+                                <i class="fas fa-star checked" onmouseover="starmark(this)" onclick="starmark(this)" id="3one" style="font-size: 30px;cursor: pointer;"></i>
+                                <i class="fas fa-star checked" onmouseover="starmark(this)" onclick="starmark(this)" id="4one" style="font-size: 30px;cursor: pointer;"></i>
+                                <i class="fas fa-star checked" onmouseover="starmark(this)" onclick="starmark(this)" id="5one" style="font-size: 30px;cursor: pointer;"></i>
+                            </div>
+                            <div class="form-group">
+                                <textarea class="form-control" name="comment" id="comment" cols="30" rows="5" placeholder="comment here.." required></textarea>
+                            </div>
+                            <div class="form-group">
+                                <button class="btn btn-primary" type="submit" value="comment">Give Feedback</button>
+                            </div>
+                        </div>
+                    </form>
+                    {{ end }}
+
+                </div>
+                {{ range .Comments }}
+                <div class='review border-bottom col-md-6 mb-2 border p-2 rounded'>
+                    <div class='reviewer row pt-2'>
+                        <div class='ml-3'>
+                            <span id='user-logo' class='bg-danger text-white pl-1 pr-1 mt-2 rounded-circle'>J</span> 
+                        </div>
+                        <div class='col-md-9 commenter'>
+                            {{ if .FirstName }}
+                            <p class='p-0 m-0 reviewer-name text-success'>{{.FirstName}}</p>
+                            {{ else }}
+                            <p class='p-0 m-0 reviewer-name text-success'>Anonymous</p>
+                            {{ end }}
+                            <span class="review-time">{{ .PlacedAt }}</span>
+                        </div>
+                    </div>
+                    <div class='review-text pt-2'>
+                        <p>{{ .Comment.Comment }}</p>
+                    </div>
+                </div>
+                {{ end }}
+            </div>
+        </div>
+    </div>
+    <script>
+        var hid = `{{ .Healthcenter.ID }}`;
+        
+        console.log(hid);
+        var rating = "5";
+        function starmark(item) {
+            var count = item.id[0];
+            rating = count;
+            var subid = item.id.substring(1);
+            console.log(count + subid);
+
+            for (let i = 0; i < 5; i++) {
+                $cur = $("#"+(i+1)+subid);
+                // console.log($cur);
+                // console.log("#"+(i+1)+subid)
+                if ( i < count){
+                    $cur.css("color", "orange");
+                }else{
+                    $cur.css("color", "black");
+                }
+                
+            }
+            console.log(rating);
+        }
+
+        $("#comment-form").submit(function(e){
+            e.preventDefault();
+            comment = $("#comment").val();
+            csrf = $("#csrf").val();
+            console.log("comment:"+comment+"rating:"+rating+"hid:"+hid);
+            $.post("http://localhost:8282/feedback",
+            {
+                _csrf: csrf,
+                userrating: rating,
+                usercomment: comment,
+                hcid:hid
+            },function(data, success){
+                console.log(data, success);
+                // window.reload(true)
+                window.location.href = window.location.href + "#reviews"
+                window.location.reload(true)
+                // window.header().href = window.header().href
+            });
+        });
+    </script>
+</div>
+{{ end }}

@@ -1,0 +1,32 @@
+{{ define "user.header.layout" }}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link rel="shortcut icon" href="../assets/img/favicon.png" type="image/png">
+    <link rel="stylesheet" href="../assets/css/bootstrap.min.css">
+    <link rel="stylesheet" href="../assets/css/style.user.css">
+    <link rel="stylesheet" href="../assets/fontawesome-free-5.12.0-web/css/fontawesome.min.css">
+    <link rel="stylesheet" href="../assets/fontawesome-free-5.12.0-web/css/brands.css">
+    <link rel="stylesheet" href="../assets/fontawesome-free-5.12.0-web/css/solid.min.css">
+    <script src="../assets/js/jquery-3.4.1.min.js"></script>
+    <title>TenaHub</title>
+</head>
+<body>
+    <header>
+        <div id='nav' class='d-flex flex-column flex-md-row align-items-center p-3 px-md-4 mb-3 bg-white border-bottom shadow-sm'>
+            <!-- <h4 class='my-0 mr-md-auto logo'><a href='/'><b>TenaHub</b></a></h4> -->
+            <div class="container d-flex flex-column flex-md-row align-items-center">
+                <h4 class="my-0 mr-md-auto logo"><a href="/"><img src="../assets/img/logo.png" height="50px" alt=""></a></h4>
+                <nav class='my-2 my-md-0 mr-md-3'>
+                    <a class='p-2 text-dark' href='/home'>Home</a>
+                    <a class='p-2 text-dark' href='#'>About</a>
+                </nav>
+                <span id='user-logo' class='bg-danger text-white pl-1 pr-1 rounded-circle'>N</span>
+                <a class='btn text-primary' href='/logout'>Logout</a>
+            </div>
+        </div>
+    </header>
+{{ end }}

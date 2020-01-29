@@ -1,0 +1,56 @@
+{{ define "user.login.layout" }}
+{{ template "user.header.default.layout" }}
+{{ template "user.login.content" . }}
+{{ template "user.footer.default.layout" }}
+{{ end }}
+
+{{ define "user.login.content" }}
+<div class="container-fluid body-container">
+    <div class="container">
+        <div class="row">
+            <div class="col-md-7 d-flex">
+
+                <!-- <?php
+                    if(isset($_SESSION["signedin"]) && $_SESSION["signedin"]==true){
+                        echo "<div class='form-img mx-auto align-self-center text-center'>
+                                <img src='assets/imgs/checkmark.png' alt='' style='display:block;'>
+                                <h3 class='text-center text-primary'>Account created succesfully, Login here</h3>
+                            </div>";
+                        unset($_SESSION["signedin"]);
+                    }else{
+                        echo "<div class='form-img mx-auto align-self-center'>
+                                <img src='assets/imgs/sign-up.png' alt=''>
+                                <h2 class='text-center text-primary'>TenaHub login</h2>
+                            </div>";
+                    }
+
+                ?> -->
+                <div class='form-img mx-auto align-self-center'>
+                    <img src='../assets/img/sign-up.png' alt=''>
+                    <h2 class='text-center text-primary'>TenaHub login</h2>
+                </div>
+            </div>
+            <div class="col-md-5">
+                <div class="form-holder form shadow p-3 mb-5 bg-white">
+                    <form method="POST" id="login-form" action="/login">
+                        <input value="{{.CSRF}}" name="_csrf" hidden="true"/>
+                        <div class="form-group">
+                            <p class="text-danger">
+                            {{with .VErrors.Get "generic" }} {{ . }} {{end}}
+                            </p>
+                            <label for="exampleInputPassword1">Email</label>
+                            <input type="email" class="form-control" id="email" name="email" placeholder="Enter Email" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="exampleInputPassword1">Password</label>
+                            <input type="password" class="form-control" id="password" name="password" placeholder="Password" required>
+                        </div>
+                        <p id="input-error" class="text-danger"></p>
+                        <button type="submit" name="submit" class="btn btn-primary">Login</button>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+{{ end }}

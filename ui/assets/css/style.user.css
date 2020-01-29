@@ -1,0 +1,292 @@
+#banner{
+    height: 500px;
+    background-image: url('../img/banner.svg');
+    background-color: rgba(5, 56, 107, 0.274);
+    background-position: 80% 80px;
+    background-size: 400px;
+    background-repeat: no-repeat;
+}
+
+ul{
+    padding-left: 0!important;
+    list-style: none;
+}
+
+a{
+    color:#222222;
+}
+
+.btn{
+    margin-right: 10px;
+}
+
+*{
+    columns: #222222;
+    max-width: 100%;
+    box-sizing: border-box!important;
+}
+
+img{
+    max-width: 100%;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+a:hover{
+    text-decoration: none;
+}
+
+div.search-form{
+    margin-left: 0!important;
+    padding-left: 0!important;
+}
+
+.items{
+    min-height: 300px;
+    background-color: #ffffff;
+}
+
+.item-img img{
+    height: 200px;
+    width: 100%;
+}
+
+.item-desc{
+    padding:10px;
+}
+
+.container h2{
+    padding-top: 50px;  
+    padding-bottom: 20px;
+}
+
+input{
+    background-color: transparent;
+}
+
+.banner-title{
+    font-weight: bold;
+    font-size: 250%;
+    margin-bottom: 30px;
+    margin-top: -70px;
+    text-shadow: .5px .5px 2px #707070;
+}
+
+.search-input{
+    /* border-radius: 30px; */
+    margin-left: 0;
+    margin-bottom: 10px;
+    padding:0 40px 0 20px;
+    height: 50px;
+}
+
+.search-input[type="submit"]{
+    margin-left: 5px;
+    max-width: 170px!important;
+    height: 45px;
+}
+
+#list-all-btn{
+    background-color: #3F3D56!important;
+    color: #ffffff;
+    margin-left: 5px;
+    max-width: 170px!important;
+    height: 45px;
+}
+
+input[type='text'].search-input{
+    background-color: #ffffff;
+    border:none;
+}
+
+.col{
+    padding-left: 0!important;
+}
+
+.walkthrough-item{
+    box-sizing: border-box;
+    padding: 50px 20px;
+    height: 350px;
+}
+
+.advert {
+    padding: 30px 0;
+}
+
+.adv-h{
+    background-color: rgba(5, 56, 107, 0.767);
+}
+
+
+#hot-to-use{
+    min-height: 600px;
+    padding: 30px;
+}
+
+#top-rated{
+    background-color: rgba(168, 185, 203, 0.452);
+    padding-bottom: 100px;
+    clear: both;
+}
+
+#top-rated h2 {
+    color: #05386B;
+    margin-bottom: 20px;
+}
+
+div#nav{
+    margin-bottom: 0px!important;
+}
+
+
+.body-container{
+    padding: 80px 0;
+}
+
+.form-img{
+    width: 50%;
+}
+
+.form-holder{
+    background-color: rosybrown;
+    padding:20px;
+}
+
+.filter-search-form{
+    /* border: 1px solid red; */
+}
+
+.filter-search-form .search-btn {
+    /* border: 1px solid green!important; */
+    margin-bottom: 2px;
+    width: 200px;
+}
+
+.form .btn{
+    width: 100%;
+}
+
+#search-result-sidebar{
+    box-sizing: border-box;
+}
+
+#search-result-sidebar ul{
+    list-style: none;
+}
+
+.search-item{
+    padding:10px 0;
+    margin-bottom: 10px;
+}
+
+.search-title{
+    color: #222222;
+    font-weight:600;
+    font-size: 1.4em;
+}
+
+.search-services span::after{
+    content: "--"
+}
+
+.search-services:last-child::after{
+    content: "";
+}
+
+
+.health_center_image img{
+    width:100%;
+    height: 400px;
+}
+
+.health-center-img-snap-holder{
+
+}
+
+.health-center-img-snap img{
+    width:120px;
+    height: 100px;
+}
+
+.health-center-desc-title{
+    padding-top: 0!important;
+    margin-top: 0;
+}
+
+.reviewer-img{
+    width: 60px;
+    height: 60px;
+}
+
+.reviewer-name{
+    font-size: 14px;
+    font-weight: bolder;
+    /* color: #05386B; */
+}
+
+.review-time{
+    font-size: 13px;
+    font-weight: lighter;
+}
+
+span#user-logo{
+    display: inline-block;
+    width: 30px;
+    height: 30px;
+    text-align: center;
+    line-height: 30px;
+}
+
+.rating{
+    width:fit-content;
+}
+
+
+
+.rating img{
+    width: 20px;
+    height: 20px;
+}
+
+#walkthrough-container{
+    margin-top: 60px;
+    margin-bottom: 60px;
+}
+
+.walkthrough-icon{
+    width: 100px;
+    height:100px;
+    margin-left: auto;
+    margin-right: auto;
+}
+footer{
+    padding:60px 0 0;
+    background-color: #05386B;
+}
+
+.footer-list{
+    list-style: none;
+}
+
+.list-title{
+    margin-bottom: 10px;
+}
+
+footer ul{
+    padding-left: 0;
+}
+
+footer *{
+    color: #ffffff;
+}
+
+.copy-right{
+    padding-left:0;
+    margin-top: 40px;
+    padding-bottom: 20px;
+    opacity: 0.8;
+}
+
+.checked {
+    color: orange;
+}

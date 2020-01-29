@@ -1,0 +1,146 @@
+&{0 MWVFYmDHkniOJ9mJPbYaCyEQVjaflsQ3 1580311990 [88 68 80 110 54 56 81 97 75 73 90 81 115 116 109 80 67 90 115 102 100 73 120 81 100 68 98 110 78 45 121 81 118 108 120 88 77 83 95 45 73 84 89 61]}
+Path: /, Role: , Method: GET
+path: /
+permitted: true
+here 1
+Path: /favicon.ico, Role: , Method: GET
+path: /favicon.ico
+permitted: true
+here 1
+Path: /, Role: , Method: GET
+path: /
+permitted: true
+here 1
+[]
+[]
+Path: /, Role: , Method: GET
+path: /
+permitted: true
+here 1
+[]
+[]
+http://localhost:8282/
+
+
+http://localhost:8282/login
+map[password:[password] confirmpassword:[password] _csrf:[eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.e30.9nDKGk7UhZGEaVY42z0GPcvTDn0T5G2FNBOr0EF9yAo] firstname:[Natnael] lastname:[Hussein] email:[natnael.awel@gmail.com] phonenum:[0915670645]]
+{0 Natnael Hussein natnael.awel@gmail.com $2a$12$.pbL.5qNNGWPHIlw9otFxOROI2xEtkGTfcc5ZRXmER1sYALQmzXwO  0915670645 user}
+reading: %!s(<nil>)
+comparison: -1
+<nil>
+http://localhost:8282/signup
+http://localhost:8282/login
+{0   natnael.awel@gmail.com password   }
+{error {0       }}
+Path: /, Role: , Method: GET
+path: /
+permitted: true
+here 1
+Path: /favicon.ico, Role: , Method: GET
+path: /favicon.ico
+permitted: true
+here 1
+Path: /, Role: , Method: GET
+path: /
+permitted: true
+here 1
+[]
+[]
+map[_csrf:[eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.e30.9nDKGk7UhZGEaVY42z0GPcvTDn0T5G2FNBOr0EF9yAo] firstname:[Natnael] lastname:[Hussein] email:[natnael.awel1@gmail.com] phonenum:[9156706456] password:[password] confirmpassword:[password]]
+{0 Natnael Hussein natnael.awel1@gmail.com $2a$12$fG4u0aw2TYikt5YB7Gl4BeVqclrvFkIkieKviUQTMbqJR6e5k27Du  9156706456 user}
+reading: %!s(<nil>)
+comparison: -1
+<nil>
+http://localhost:8282/signup
+http://localhost:8282/login
+{0   natnael.awel1@gmail.com password   }
+{error {0       }}
+http://localhost:8282/signup
+http://localhost:8282/login
+{0   natnael.awel1@gmail.com password   }
+{error {0       }}
+
+map[password:[password] confirmpassword:[password] _csrf:[eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.e30.9nDKGk7UhZGEaVY42z0GPcvTDn0T5G2FNBOr0EF9yAo] firstname:[Natnael] lastname:[Hussein] email:[natnael.awel2@gmail.com] phonenum:[91567064534]]
+{0 Natnael Hussein natnael.awel2@gmail.com $2a$12$t2QdGLs9Ek1jTAr3pji98Ogf2/BffA/YFbtizEtDZrASxvrKHtzhW  91567064534 user}
+reading: %!s(<nil>)
+comparison: -1
+<nil>
+http://localhost:8282/signup
+http://localhost:8282/login
+{0   natnael.awel2@gmail.com password   }
+{success {3 Natnael Hussein natnael.awel2@gmail.com $2a$12$t2QdGLs9Ek1jTAr3pji98Ogf2/BffA/YFbtizEtDZrASxvrKHtzhW  91567064534 user}}
+sess: XDPn68QaKIZQstmPCZsfdIxQdDbnN-yQvlxXMS_-ITY=http://localhost:8181/v1/session
+service: XDPn68QaKIZQstmPCZsfdIxQdDbnN-yQvlxXMS_-ITY=
+session uuid: MWVFYmDHkniOJ9mJPbYaCyEQVjaflsQ3
+http://localhost:8181/v1/session?uuid=MWVFYmDHkniOJ9mJPbYaCyEQVjaflsQ3
+{
+
+"ID": 1,
+
+"uuid": "MWVFYmDHkniOJ9mJPbYaCyEQVjaflsQ3",
+
+"expires": 1580311990,
+
+"signing_key": "WERQbjY4UWFLSVpRc3RtUENac2ZkSXhRZERibk4teVF2bHhYTVNfLUlUWT0="
+}
+here [88 68 80 110 54 56 81 97 75 73 90 81 115 116 109 80 67 90 115 102 100 73 120 81 100 68 98 110 78 45 121 81 118 108 120 88 77 83 95 45 73 84 89 61]
+referer: http://localhost:8282/login
+&{3 Natnael Hussein natnael.awel2@gmail.com $2a$12$t2QdGLs9Ek1jTAr3pji98Ogf2/BffA/YFbtizEtDZrASxvrKHtzhW  91567064534 user}
+role: user
+id: 3
+http://localhost:8282/home
+Path: /home, Role: USER, Method: GET
+path: /home
+permitted: true
+here 1
+[]
+home: XDPn68QaKIZQstmPCZsfdIxQdDbnN-yQvlxXMS_-ITY=
+usersess: &{'\x01' "MWVFYmDHkniOJ9mJPbYaCyEQVjaflsQ3" %!q(int64=1580311990) "XDPn68QaKIZQstmPCZsfdIxQdDbnN-yQvlxXMS_-ITY="}logged In: XDPn68QaKIZQstmPCZsfdIxQdDbnN-yQvlxXMS_-ITY=<nil>
+Path: /, Role: USER, Method: GET
+path: /
+permitted: true
+here 1
+Path: /favicon.ico, Role: USER, Method: GET
+path: /favicon.ico
+permitted: true
+here 1
+Path: /, Role: USER, Method: GET
+path: /
+permitted: true
+here 1
+Path: /favicon.ico, Role: USER, Method: GET
+path: /favicon.ico
+permitted: true
+here 1
+Path: /, Role: USER, Method: GET
+path: /
+permitted: true
+here 1
+Path: /favicon.ico, Role: USER, Method: GET
+path: /favicon.ico
+permitted: true
+here 1
+Path: /, Role: USER, Method: GET
+path: /
+permitted: true
+here 1
+Path: /favicon.ico, Role: USER, Method: GET
+path: /favicon.ico
+permitted: true
+here 1
+Path: /, Role: USER, Method: GET
+path: /
+permitted: true
+here 1
+Path: /favicon.ico, Role: USER, Method: GET
+path: /favicon.ico
+permitted: true
+here 1
+Path: /, Role: USER, Method: GET
+path: /
+permitted: true
+here 1
+Path: /favicon.ico, Role: USER, Method: GET
+path: /favicon.ico
+permitted: true
+here 1

@@ -1,0 +1,215 @@
+body{
+    background-size: auto;
+    background: url("../img/banner-bg.jpg") no-repeat unset;
+}
+input{
+    border: 0;
+    outline: 0;
+    border-bottom: 1px solid #172269;
+}
+#nav{
+    font-size: 20px;
+}
+.form-holder{
+    background-size: cover;
+    background: rgba(255, 255, 255, 0.7) no-repeat;
+    color: #000;
+}
+
+ul{
+    padding-left: 0!important;
+    list-style: none;
+}
+
+a{
+    color:#222222;
+}
+
+.btn{
+    margin-right: 10px;
+}
+
+*{
+    color: #222;
+    max-width: 100%;
+    box-sizing: border-box;
+}
+
+img{
+    max-width: 100%;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+a:hover{
+    text-decoration: none;
+}
+
+div.search-form{
+    margin-left: 0!important;
+    padding-left: 0!important;
+}
+
+.items{
+    min-height: 300px;
+    /* background-color: darkorange; */
+}
+
+.item-img img{
+    height: 200px;
+    width: 100%;
+}
+
+.item-desc{
+    padding:10px;
+}
+
+.container h2{
+    font-size: 35px;
+    color: tomato;
+    padding-top: 25px;
+    padding-bottom: 25px;
+}
+
+input{
+    background-color: transparent!important;
+    font-size: 15px;
+
+}
+
+.banner-title{
+    font-weight: bold;
+    font-size: 300%;
+    margin-bottom: 50px;
+    margin-top: -40px;
+    text-shadow: .5px .5px 2px #707070;
+}
+
+.search-input{
+    border-radius: 30px;
+    margin-left: 0;
+    padding:0 40px;
+    height: 50px;
+}
+
+input[type='text'].search-input{
+    background-color: #ffffff;
+    border:none;
+}
+
+.col{
+    padding-left: 0!important;
+}
+
+div#nav{
+    margin-bottom: 0px!important;
+}
+
+footer{
+    padding:20px 0px;
+}
+
+.footer-list{
+    list-style: none;
+}
+
+.list-title{
+    margin-bottom: 10px;
+}
+
+footer ul{
+    padding-left: 0;
+}
+
+footer li a{
+    color: #222222;
+}
+
+.copy-right{
+    padding-left:0;
+}
+
+.body-container{
+    padding: 80px 0;
+}
+
+.form-img{
+    width: 50%;
+}
+
+.form .btn{
+    width: 100%;
+}
+
+#search-result-sidebar{
+    box-sizing: border-box;
+}
+
+#search-result-sidebar ul{
+    list-style: none;
+}
+
+.search-item{
+    padding:10px 0;
+    margin-bottom: 10px;
+}
+
+.search-title{
+    color: #222222;
+    font-weight:600;
+    font-size: 1.4em;
+}
+
+.search-services span::after{
+    content: "--"
+}
+
+.search-services:last-child::after{
+    content: "";
+}
+
+
+.health_center_image img{
+    width:100%;
+    height: 400px;
+}
+
+.health-center-img-snap-holder{
+
+}
+
+.health-center-img-snap img{
+    width:120px;
+    height: 100px;
+}
+
+.health-center-desc-title{
+    padding-top: 0!important;
+    margin-top: 0;
+}
+
+.reviewer-img{
+    width: 60px;
+    height: 60px;
+}
+
+.reviewer-name{
+    font-weight: 500;
+}
+
+span#user-logo{
+    display: inline-block;
+    width: 30px;
+    height: 30px;
+    text-align: center;
+    line-height: 30px;
+}
+
+.rating{
+    width:fit-content;
+}
+
+.rating img{
+    width: 20px;
+    height: 20px;
+}

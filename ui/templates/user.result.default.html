@@ -1,0 +1,71 @@
+{{ define "user.result.default.layout" }}
+{{ template "user.header.default.layout" }}
+{{ template "user.result.default.content" . }}
+{{ template "user.footer.default.layout" }}
+{{ end }}
+
+{{ define "user.result.default.content" }}
+<div class="container-fluid body-container">
+    <div class="container">
+        <div class="col-md-9 pt-4 border">
+            <div class="pl-0">
+                <div>
+                    <form action="/search" class="filter-search-form" method="get" id="search-form-filter" enctype="text/plain">
+                        <div class="">
+                            <div class="form-row m-0" >
+                                <div class="col-6 p-0">
+                                    <input type="text" class="form-control" pattern="^[^\s]+(\s+[^\s]+)*$" placeholder="search..." id="search-key-input" name="search-key" class="form-control search-input" required>
+                                </div>
+                                <div class="col-3">
+                                    <select name="" id="search-filter-input" class="ml-2 custom-select" required>
+                                        <option value="">Search by</option>
+                                        <option value="name">Name</option>
+                                        <option value="city">City</option>
+                                        <option value="service">Services</option>
+                                    </select>
+                                </div>
+                                <div class="col-3">
+                                    <input type="submit" class="btn ml-1 btn-danger search-btn" value="search">
+                                    <script>
+                                        $("#search-form-filter").submit(function(e){
+                                            e.preventDefault()
+                                            console.log($("#search-filter-input").val(), $("#search-key-input").val());
+                                            $key = $("#search-key-input").val();
+                                            $column = $("#search-filter-input").val();
+                                            window.location.href = "http://localhost:8282/search?search-key="+$key+"&column="+$column;
+                                        });
+                                    </script>
+                                </div>
+                            </div>
+                        </div>
+                    </form> 
+                </div>
+            </div>
+            <div class="mt-4 col-md-12 p-0">
+                <strong class="m-2">Search results({{ .Length }})</strong>
+                <div class="search-items">
+                    {{ range .Content }}
+                    <div class='search-item row ml-0 border'>
+                        <div class='col-md-3'>
+                            <img src="../assets/img/health_center.jpg" class='rounded' alt=''>
+                        </div>
+                        <div class='col-md-9'>
+                            <a href="/healthcenters?id={{.ID}}" class='search-title'>{{ .Name }}</a>
+                            <div class='location'>
+                                <p>City</p>
+                            </div>
+                            <div class='rating d-flex'>
+                                <img src='../assets/img/star_blue.png' alt=''>
+                                <span>{{ .Rating }}</span>
+                            </div>
+                        </div>
+                    </div>
+                    {{ else }}
+                    <h1>No Result</h1>
+                    {{ end }}
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+{{ end }}

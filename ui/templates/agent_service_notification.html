@@ -1,0 +1,56 @@
+{{define "agent_service_notification.layout"  }}
+    {{template "agent_service_notification.content" .}}
+{{end}}
+
+{{define "agent_service_notification.content"}}
+
+<div class="table-wrapper">
+    <div class="table-title">
+        <div class="row">
+            <div class="col-sm-6">
+                <h2>Manage <b>Service</b></h2>
+            </div>
+            <div class="col-sm-6">
+                <a href="#" class="btn btn-success" ><i class="material-icons">&#xe5ca;</i> <span>Approve</span></a>
+                <a href="#" class="btn btn-danger"><i class="material-icons">&#xe14b;</i> <span>Decline</span></a>
+            </div>
+        </div>
+    </div>
+    <table class="table table-striped table-hover" id="example">
+        <thead >
+        <tr >
+            <th>
+                <span class="custom-checkbox">
+                    <input type="checkbox" id="selectAllAgent">
+                    <label for="selectAllAgent"></label>
+                </span>
+            </th>
+            <th>Name</th>
+            <th>Description</th>
+            <th>Status</th>
+            <th>Actions</th>
+        </tr>
+        </thead>
+        <tbody id="agent_data_table">
+        {{ range .PendingServices}}
+        <tr>
+            <td>
+                <span class="custom-checkbox">
+                    <input type="checkbox" id="checkbox1" class="agent_checkbox" name="options[]" value="1">
+                    <label for="checkbox1"></label>
+                </span>
+            </td>
+            <td>{{.Name}} </td>
+            <td>{{.Description}}</td>
+            <td>{{.Status}}</td>
+            <td>
+                <a  class="service-approve" data-toggle="modal"><i class="material-icons done text-success "  title="Approve">&#xe5ca;</i></a>
+                <a  class="service-decline" data-toggle="modal"><i class="material-icons delete text-danger" title="Decline">&#xe14b;</i></a>
+            </td>
+            <td id="service-hidden-field" hidden>{{.ID}}</td>
+        </tr>
+        {{end}}
+        </tbody>
+    </table>
+</div>
+{{end}}

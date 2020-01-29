@@ -1,0 +1,111 @@
+{{define "healthcenter_edit_profile.layout"}}
+    {{template "healthcenter_edit_profile.content" .}}
+{{end}}
+
+{{define "healthcenter_edit_profile.content"}}
+<div class="container edit-profile" style="padding:30px; min-height:80vh; box-shadow:1px 3px 7px #888;">
+
+    <form class="row" action="/healthcenter/updateprofile" method="POST" enctype="multipart/form-data">
+        <input name="_csrf" value='{{ .Form.CSRF }}' type="hidden" >
+        {{with .HealthCenter}}
+        <!-- left column -->
+        <div class="col-md-4">
+            <h1>Edit Profile</h1>
+            <hr>
+            <div class="text-center">
+                {{ if .ProfilePic}}
+                    <img src="/assets/img/uploads/healthcenter_uploads/{{.ProfilePic}}" class="avatar rounded-circle img-circle" alt="profile" width="150px" height = "150px">
+
+                {{else}}
+                    <img src="/assets/img/guest_photo.jpg" class="avatar rounded-circle img-circle" alt="profile" width="150px" height = "150px">
+
+                {{end}}
+                <h4>Upload a Cover Photo...</h4>
+                <input type="file" name="upload_image" class="form-control">
+            </div>
+        </div>
+        <div class="col-md-7 personal-info">
+
+            <h2>Health Center info</h2>
+
+            <div class="form-group row" >
+                <label class="col-lg-3 control-label">Name:</label>
+                <div class="col-lg-8">
+                {{end}}
+                {{with .Form.VErrors.Get "name"}}
+                    <label class="text-danger">{{.}}</label>
+                {{end}}
+                {{with .HealthCenter}}
+                <input class="form-control" name="name" type="text" value="{{.Name}}">
+                </div>
+            </div>
+            <div class="form-group row">
+                <label class="col-lg-3 control-label">Email:</label>
+                <div class="col-lg-8">
+                {{end}}
+                {{with .Form.VErrors.Get "email"}}
+                    <label class="text-danger">{{.}}</label>
+                {{end}}
+                {{with .HealthCenter}}
+                    <input class="form-control" name="email" type="email" value="{{.Email}}" required>
+                </div>
+            </div>
+            <div class="form-group row" >
+                <label class="col-lg-3 control-label">Address:</label>
+                <div class="col-lg-8">
+                {{end}}
+                {{with .Form.VErrors.Get "address"}}
+                    <label class="text-danger">{{.}}</label>
+                {{end}}
+                {{with .HealthCenter}}
+                    <input class="form-control" name="address" type="text" value="{{.City}}" required>
+                </div>
+            </div>
+            <div class="form-group row">
+                <label class="col-lg-3 control-label">Phone:</label>
+                <div class="col-lg-8">
+                {{end}}
+                {{with .Form.VErrors.Get "phone"}}
+                    <label class="text-danger">{{.}}</label>
+                {{end}}
+                {{with .HealthCenter}}
+                    <input class="form-control" name="phone" type="tel" value="{{.PhoneNumber}}" required>
+                </div>
+            </div>
+            <div class="form-group row">
+                <label class="col-md-3 control-label">Password:</label>
+                <div class="col-md-8">
+                {{end}}
+                {{with .Form.VErrors.Get "password"}}
+                    <label class="text-danger">{{.}}</label>
+                {{end}}
+                {{with .HealthCenter}}
+                    <input class="form-control" name="password" type="password" value="" minlength="8" >
+                </div>
+            </div>
+            <div class="form-group row">
+                <label class="col-md-3 control-label">Confirm:</label>
+                <div class="col-md-8">
+                {{end}}
+                {{with .Form.VErrors.Get "confirmpassword"}}
+                    <label class="text-danger">{{.}}</label>
+                {{end}}
+                {{with .HealthCenter}}
+                    <input class="form-control" name="confirmpassword" type="password" value="" minlength="8">
+                </div>
+            </div>
+            <div class="form-group">
+                <label class="col-md-3 control-label"></label>
+                <div class="col-md-8">
+                    <input type="submit" name="submit" class="btn btn-primary" value="Save Changes">
+                    <span></span>
+                    <input type="reset" class="btn btn-default" value="Cancel">
+                </div>
+            </div>
+
+        </div>
+    {{end}}
+    </form>
+</div>
+{{end}}
+

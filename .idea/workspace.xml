@@ -1,0 +1,54 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ChangeListManager">
+    <list default="true" id="cdbdb76a-16d2-40c5-814a-7309deecf6d5" name="Default Changelist" comment="" />
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="GOROOT" path="/usr/lib/go-1.10" />
+  <component name="ProjectId" id="1X2xHA7z2s8Tc735M2hDGF1psyl" />
+  <component name="ProjectViewState">
+    <option name="hideEmptyMiddlePackages" value="true" />
+    <option name="showExcludedFiles" value="true" />
+    <option name="showLibraryContents" value="true" />
+  </component>
+  <component name="PropertiesComponent">
+    <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
+    <property name="WebServerToolWindowFactoryState" value="false" />
+    <property name="go.import.settings.migrated" value="true" />
+    <property name="go.sdk.automatically.set" value="true" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
+    <property name="settings.editor.selected.configurable" value="Docker" />
+  </component>
+  <component name="ServiceViewManager">
+    <option name="viewStates">
+      <list>
+        <serviceView>
+          <treeState>
+            <expand />
+            <select />
+          </treeState>
+        </serviceView>
+      </list>
+    </option>
+  </component>
+  <component name="TypeScriptGeneratedFilesManager">
+    <option name="version" value="1" />
+  </component>
+  <component name="WindowStateProjectService">
+    <state x="278" y="55" width="800" height="677" key="#Deployment" timestamp="1580258236225">
+      <screen x="0" y="22" width="1366" height="746" />
+    </state>
+    <state x="278" y="55" width="800" height="677" key="#Deployment/0.22.1366.746@0.22.1366.746" timestamp="1580258236225" />
+    <state x="283" y="197" width="790" height="394" key="#com.intellij.fileTypes.FileTypeChooser" timestamp="1580257905917">
+      <screen x="0" y="22" width="1366" height="746" />
+    </state>
+    <state x="283" y="197" width="790" height="394" key="#com.intellij.fileTypes.FileTypeChooser/0.22.1366.746@0.22.1366.746" timestamp="1580257905917" />
+    <state x="149" y="29" key="SettingsEditor" timestamp="1580258879271">
+      <screen x="0" y="22" width="1366" height="746" />
+    </state>
+    <state x="149" y="29" key="SettingsEditor/0.22.1366.746@0.22.1366.746" timestamp="1580258879271" />
+  </component>
+</project>

@@ -1,0 +1,19 @@
+{{ define "agent_home.layout"}}
+    {{template "agent_home_header.layout" .}}
+    {{template "agent_home.content" .}}
+    {{template "admin_home.footer" .}}
+
+{{end}}
+
+{{define "agent_home.content"}}
+
+<div class="main">
+    <ul >
+        <li>{{template "agent_edit_profile.layout" .}}</li>
+        <li>{{template "agent_service_notification.layout" .}}</li>
+        <li>{{template "agent_manage_healthcenter.layout" .}}</li>
+
+    </ul>
+</div>
+
+{{end}}

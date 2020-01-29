@@ -1,0 +1,28 @@
+sudo -u postgres /usr/lib/postgresql/11/bin/pg_ctl -D /etc/postgresql/11/main -l /var/log/postgresql/postgresql-11-main.log start
+
+
+Self Deplying
+
+1, go build
+2, ./tenahubapidocker 
+3, nohup ./tenahubapidocker
+
+
+
+
+docker 
+client
+1, sudo docker build -t tenahubclientdocker .
+2, sudo docker run --publish 8080:8282 --name tenahubclient --rm tenahubclientdocker
+
+
+api
+
+1, sudo docker build -t tenahubapidocker .
+2,sudo docker run --publish 80:8181 --name tenahubapi --rm tenahubapidocker
+
+
+
+
+ps -ef|grep postgres
+sudo kill process id 
